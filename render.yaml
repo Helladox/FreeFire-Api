@@ -1,11 +1,10 @@
 services:
   - type: web
     name: freefire-api
-    env: node
+    env: python
     plan: free
-    buildCommand: npm install
-    startCommand: node index.js
-    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
     envVars:
       - key: PORT
         value: 10000
